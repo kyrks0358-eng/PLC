@@ -1,0 +1,58 @@
+<title>PLC紹介動画</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&display=swap">
+<style>
+  :root {
+    color-scheme: dark;
+    --ground: #0b1422;
+    --panel: #121f33;
+    --ink: #f2ede3;
+    --muted: #a3adbb;
+    --gold: #d6b26d;
+    --line: rgba(214, 178, 109, .3);
+  }
+  body {
+    background: var(--ground);
+    color: var(--ink);
+    font: 16px/1.75 "Noto Sans JP", "Hiragino Sans", "Yu Gothic", sans-serif;
+    padding-inline: 16px;
+    padding-block: 40px 56px;
+  }
+  main { max-width: 960px; margin: 0 auto; display: grid; gap: 28px; }
+  .eyebrow { font-size: 12px; letter-spacing: .2em; color: var(--gold); margin: 0; }
+  h1 { font-size: clamp(24px, 4vw, 34px); font-weight: 500; line-height: 1.4; margin: 6px 0 0; text-wrap: balance; }
+  video {
+    display: block; width: 100%; max-width: 100%; aspect-ratio: 16 / 9;
+    background: #000; border: 1px solid var(--line); border-radius: 10px;
+  }
+  .facts { display: flex; flex-wrap: wrap; gap: 8px 28px; margin: 0; padding: 0; list-style: none; color: var(--muted); font-size: 14px; }
+  .facts b { color: var(--ink); font-weight: 500; font-variant-numeric: tabular-nums; }
+  .note {
+    background: var(--panel); border-radius: 10px; padding: 18px 22px;
+    font-size: 14px; color: var(--muted); max-width: 65ch;
+  }
+  .note p { margin: 0; }
+  .note p + p { margin-top: 6px; }
+</style>
+
+<main>
+  <header>
+    <p class="eyebrow">PLC EXECUTIVE ENGLISH COACHING</p>
+    <h1>経営者が、自分の言葉で世界と交渉するために。</h1>
+  </header>
+
+  <video controls playsinline preload="metadata" poster="poster.jpg">
+    <source src="plc_pitch.mp4" type="video/mp4">
+  </video>
+
+  <ul class="facts">
+    <li>再生時間 <b>2:20</b></li>
+    <li>音声 <b>日本語ナレーション</b></li>
+    <li>エグゼクティブプラン <b>月額 ¥348,000</b></li>
+  </ul>
+
+  <div class="note">
+    <p>動画内の受講者評価は、会話記録をもとにした評価です。公式試験のスコアではありません。</p>
+    <p>月額プランは自動更新です。30日間返金保証は未受講分が対象で、体験・短期集中・付加サービスは対象外です。</p>
+  </div>
+</main>
