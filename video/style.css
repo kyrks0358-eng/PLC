@@ -36,3 +36,8 @@ b { color: #e2c07a; font-weight: normal; }
 .lead { font-size: 48px; margin-top: 70px; } .lead.c { margin-top: 30px; color: #b9c2cf; }
 .price { font-size: 60px; margin-bottom: 60px; } .price b { font-size: 130px; }
 .brand { margin-top: 90px; font-size: 32px; letter-spacing: .12em; color: #c9a45c; }
+.plans { display: flex; gap: 36px; }
+.plan { flex: 1; border: 1px solid rgba(201,164,92,.35); border-radius: 16px; padding: 36px 40px; background: rgba(255,255,255,.04); }
+.plan .pn { font-size: 32px; color: #c9a45c; }
+.plan .pp { font-size: 64px; margin: 10px 0 18px; font-variant-numeric: tabular-nums; } .plan .pp small { font-size: 28px; color: #b9c2cf; }
+.plan .pd { font-size: 28px; line-height: 1.6; color: #b9c2cf; }
