@@ -26,8 +26,8 @@
  },
  {
   "id": "06_gary",
-  "narration": "サカモト様を担当したのは、創業パートナーのゲーリー・ラポートです。カリフォルニア出身。英語教育の経験は20年以上で、大学や社会人向けのカリキュラムも開発してきました。英語教師の国際資格、テソルも持っています。",
-  "html": "<div class='wrap'><div class='eyebrow'>YOUR COACH</div><h2 class='name'>Gary Rapport<span class='role'>Founding Partner|米国カリフォルニア州出身</span></h2><ul class='list'><li>英語教育の経験 <b>20年以上</b></li><li>大学・社会人向けカリキュラムを開発</li><li>英語教師の国際資格 <b>TESOL</b></li></ul></div>"
+  "narration": "サカモト様を担当したのは、創業パートナーのゲーリー・ラポートです。カリフォルニア出身。英語教育の経験は20年以上で、大学や社会人向けのカリキュラムも開発してきました。",
+  "html": "<div class='wrap'><div class='eyebrow'>YOUR COACH</div><h2 class='name'>Gary Rapport<span class='role'>Founding Partner|米国カリフォルニア州出身</span></h2><ul class='list'><li>英語教育の経験 <b>20年以上</b></li><li>大学・社会人向けカリキュラムを開発</li></ul></div>"
  },
  {
   "id": "07_gary_funding",
