@@ -21,7 +21,7 @@
  },
  {
   "id": "s5_trial",
-  "narration": "料金は月額12万円から。まずは、体験セッションで確かめてください。",
-  "html": "<div class='center'><div class='eyebrow'>START WITH A TRIAL</div><h1>まずは、<span class='gold'>体験セッション</span>から。</h1><p class='lead c'>継続プランは 月額 <b>¥120,000</b>〜</p><div class='brand'>PLC Executive English Coaching</div></div><div class='note'>※ 月額プランは自動更新です。30日間返金保証は未受講分が対象で、体験・短期集中・付加サービスは対象外。</div>"
+  "narration": "まずは、体験セッションで、本物を実感してください。",
+  "html": "<div class='center'><div class='eyebrow'>START WITH A TRIAL</div><h1>まずは、<span class='gold'>体験セッション</span>から。</h1><p class='lead c'>体験で、本物を実感してください。</p><div class='brand'>PLC Executive English Coaching</div></div>"
  }
 ]
