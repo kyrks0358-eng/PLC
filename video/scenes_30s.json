@@ -1,0 +1,27 @@
+[
+ {
+  "id": "s1_question",
+  "narration": "海外の投資家と、通訳なしで話せますか?",
+  "html": "<div class='center'><div class='eyebrow'>PLC EXECUTIVE ENGLISH COACHING</div><h1>海外の投資家と、<br><span class='gold'>通訳なしで</span>話せますか?</h1></div>"
+ },
+ {
+  "id": "s2_case_score",
+  "narration": "経営者のサカモト様は、14回で、英語の評価が56点から85点に。",
+  "html": "<div class='wrap'><div class='eyebrow'>CASE STUDY|坂元様(経営者)</div><div class='case'><div class='big'><span class='from'>56</span><span class='arrow'>→</span><span class='to'>85</span><span class='unit'>/100</span></div><div class='meta'>約3か月半・14回のセッション<br>投資家説明 <b class='gold'>8.5</b> / 10</div></div><div class='bars'>__BARS__</div><div class='note'>※ 会話記録をもとにした評価です。公式試験のスコアではありません。(対象期間:2026年5月12日〜8月28日)</div></div>"
+ },
+ {
+  "id": "s3_case_topics",
+  "narration": "今は、金利やブイシーについて、英語で議論されています。",
+  "html": "<div class='wrap'><div class='eyebrow'>CASE STUDY|話せる話題の変化</div><div class='row ba'><div class='card dim'><div class='k'>第1回(5月)</div><div class='v'>天気・移動・近況</div><div class='s'>短い応答を重ねて会話を維持</div></div><div class='arrow2'>→</div><div class='card hi'><div class='k'>第8回(7月9日)</div><div class='v'>金利・企業投資・VC</div><div class='s'>理由と具体例を挙げて議論</div></div></div><div class='note'>※ 会話記録をもとにした評価です。公式試験のスコアではありません。</div></div>"
+ },
+ {
+  "id": "s4_trainer",
+  "narration": "担当トレーナーは、英語教育20年以上の、ゲーリー・ラポートです。",
+  "html": "<div class='wrap'><div class='eyebrow'>YOUR COACH</div><h2 class='name'>Gary Rapport<span class='role'>Founding Partner|米国カリフォルニア州出身</span></h2><ul class='list'><li><b>坂元様の担当トレーナー</b></li><li>英語教育の経験 <b>20年以上</b></li></ul></div>"
+ },
+ {
+  "id": "s5_trial",
+  "narration": "料金は月額12万円から。まずは、体験セッションで確かめてください。",
+  "html": "<div class='center'><div class='eyebrow'>START WITH A TRIAL</div><h1>まずは、<span class='gold'>体験セッション</span>から。</h1><p class='lead c'>継続プランは 月額 <b>¥120,000</b>〜</p><div class='brand'>PLC Executive English Coaching</div></div><div class='note'>※ 月額プランは自動更新です。30日間返金保証は未受講分が対象で、体験・短期集中・付加サービスは対象外。</div>"
+ }
+]

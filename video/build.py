@@ -1,5 +1,11 @@
-"""Build plc_pitch.mp4: narration (pyopenjtalk) + slides (render.js) -> ffmpeg."""
-import json, subprocess, wave
+"""Build a narrated slide video and a silent copy from a scenes file.
+
+  python3 build.py                  # scenes.json     -> plc_pitch.mp4 / plc_pitch_silent.mp4
+  python3 build.py --short          # scenes_30s.json -> plc_pitch_30s.mp4 / plc_pitch_30s_silent.mp4
+
+Narration: pyopenjtalk. Slides: render.js (Playwright). Joined with ffmpeg.
+"""
+import json, subprocess, sys, wave
 from pathlib import Path
 import numpy as np
 import pyopenjtalk
@@ -8,14 +14,19 @@ import imageio_ffmpeg
 ROOT = Path(__file__).parent
 BUILD = ROOT / "build"
 FFMPEG = imageio_ffmpeg.get_ffmpeg_exe()
-LEAD, TAIL, FADE = 0.6, 0.9, 0.4
+FADE = 0.4
 
-scenes = json.loads((ROOT / "scenes.json").read_text())
-subprocess.run(["node", str(ROOT / "render.js")], check=True)
+if "--short" in sys.argv:
+    SCENES, OUT, LEAD, TAIL, SPEED = "scenes_30s.json", "plc_pitch_30s", 0.3, 0.5, 1.1
+else:
+    SCENES, OUT, LEAD, TAIL, SPEED = "scenes.json", "plc_pitch", 0.6, 0.9, 1.05
+
+scenes = json.loads((ROOT / SCENES).read_text())
+subprocess.run(["node", str(ROOT / "render.js"), str(ROOT / SCENES)], check=True)
 
 segments = []
 for s in scenes:
-    x, sr = pyopenjtalk.tts(s["narration"], speed=1.05)
+    x, sr = pyopenjtalk.tts(s["narration"], speed=SPEED)
     pad = lambda sec: np.zeros(int(sr * sec))
     x = np.concatenate([pad(LEAD), x, pad(TAIL)])
     x = np.clip(x, -32768, 32767).astype(np.int16)
@@ -32,11 +43,11 @@ for s in scenes:
     segments.append(seg)
     print(f"{s['id']}: {dur:.1f}s")
 
-lst = BUILD / "concat.txt"
+lst = BUILD / f"{OUT}_concat.txt"
 lst.write_text("".join(f"file '{p}'\n" for p in segments))
 subprocess.run([FFMPEG, "-y", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", str(lst),
-    "-c", "copy", "-movflags", "+faststart", str(ROOT / "plc_pitch.mp4")], check=True)
+    "-c", "copy", "-movflags", "+faststart", str(ROOT / f"{OUT}.mp4")], check=True)
 # Same slides and timing without narration, e.g. for autoplaying social feeds.
-subprocess.run([FFMPEG, "-y", "-loglevel", "error", "-i", str(ROOT / "plc_pitch.mp4"),
-    "-an", "-c:v", "copy", "-movflags", "+faststart", str(ROOT / "plc_pitch_silent.mp4")], check=True)
+subprocess.run([FFMPEG, "-y", "-loglevel", "error", "-i", str(ROOT / f"{OUT}.mp4"),
+    "-an", "-c:v", "copy", "-movflags", "+faststart", str(ROOT / f"{OUT}_silent.mp4")], check=True)
 print("done")

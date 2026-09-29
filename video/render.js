@@ -1,8 +1,8 @@
-// Render each scene in scenes.json to a 1920x1080 PNG.
+// Render each scene in a scenes file (default scenes.json) to a 1920x1080 PNG.
 const fs = require('fs');
 const { chromium } = require(require('child_process').execSync('npm root -g').toString().trim() + '/playwright');
 
-const scenes = JSON.parse(fs.readFileSync(__dirname + '/scenes.json', 'utf8'));
+const scenes = JSON.parse(fs.readFileSync(process.argv[2] || __dirname + '/scenes.json', 'utf8'));
 const css = fs.readFileSync(__dirname + '/style.css', 'utf8');
 const scores = [56, 59, 61, 67, 69, 72, 75, 79, 77, 82, 83, 84, 85, 85];
 const bars = scores.map((s, i) =>
