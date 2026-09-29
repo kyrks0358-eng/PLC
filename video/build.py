@@ -36,4 +36,7 @@ lst = BUILD / "concat.txt"
 lst.write_text("".join(f"file '{p}'\n" for p in segments))
 subprocess.run([FFMPEG, "-y", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", str(lst),
     "-c", "copy", "-movflags", "+faststart", str(ROOT / "plc_pitch.mp4")], check=True)
+# Same slides and timing without narration, e.g. for autoplaying social feeds.
+subprocess.run([FFMPEG, "-y", "-loglevel", "error", "-i", str(ROOT / "plc_pitch.mp4"),
+    "-an", "-c:v", "copy", "-movflags", "+faststart", str(ROOT / "plc_pitch_silent.mp4")], check=True)
 print("done")
