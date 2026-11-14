@@ -71,7 +71,7 @@ def build_note(date, rows):
         out += ["この日は報告すべき新しい動きなし。", ""]
     for i, r in enumerate(news, 1):
         out += [
-            f"### {i}. {re.split(r'[((::。、]', r['move'])[0][:50]}",
+            f"### {i}. {r['move'][:40]}{'…' if len(r['move']) > 40 else ''}",
             "",
             r["move"],
             "",
