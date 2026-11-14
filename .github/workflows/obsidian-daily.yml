@@ -1,0 +1,38 @@
+name: Obsidian日次まとめ
+
+# 毎日 00:10 JST に monitor/reported.md から Obsidian 用ノートを作り直す。
+# スケジュール実行はデフォルトブランチ上でのみ動く。
+on:
+  schedule:
+    - cron: "10 15 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: obsidian-daily
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: ノートを生成
+        run: python3 monitor/build_obsidian.py
+      - name: 変更があればコミット
+        run: |
+          git add obsidian
+          if git diff --cached --quiet; then
+            echo "変更なし"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "obsidian: 日次まとめを更新"
+          for i in 1 2 3; do
+            git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}" && exit 0
+            sleep 10
+          done
+          exit 1
